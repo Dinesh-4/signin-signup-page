@@ -1,9 +1,17 @@
+import { useState } from "react";
 import "./index.css";
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 
 function App() {
+
+  const [isSignup, setIsSignup] = useState(false);
+
+  const toggleForm = () => {
+    setIsSignup(!isSignup);
+  };
+
   return (
-    <div className="container right-panel-active">
+    <div className={`container ${isSignup ? "right-panel-active" : ""}`}>
       <div className="form-container sign-up-container">
         <form action="">
           <h1>Create Account</h1>
@@ -53,12 +61,12 @@ function App() {
             <p>
               To keep connected with us please login with your personal info
             </p>
-            <button className="ghost">SignIn</button>
+            <button className="ghost" onClick={toggleForm}>SignIn</button>
           </div>
           <div className="overlay-panel overlay-right">
             <h1>Hello, Friend!</h1>
             <p>Enter your details and start the journey with us</p>
-            <button className="ghost">
+            <button className="ghost" onClick={toggleForm}>
               Sign Up
             </button>
           </div>
