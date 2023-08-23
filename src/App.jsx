@@ -46,6 +46,17 @@ function App() {
           <button>Sign In</button>
         </form>
       </div>
+      <div className="overlay-container">
+        <div className="overlay">
+          <div className="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button className="ghost">SignIn</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
